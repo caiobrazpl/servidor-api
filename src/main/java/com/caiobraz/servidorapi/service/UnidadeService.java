@@ -33,6 +33,8 @@ public class UnidadeService {
     public void create(Unidade unidade) {
         var unidadeEndereco = unidade.getUnidadeEndereco();
         var endereco = this.enderecoService.create(unidadeEndereco.getEndereco());
+
+        unidade.setUnidadeEndereco(null);
         var unidadeSave = this.repository.save(unidade);
 
         unidadeEndereco.setEndereco(endereco);
