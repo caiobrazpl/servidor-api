@@ -28,7 +28,6 @@ public class ServidorEfetivoDTO extends PessoaDTO {
         super(servidorEfetivo.getPessoa());
         this.matricula = servidorEfetivo.getMatricula();
         this.idade = IdadeUtils.calcularIdade(servidorEfetivo.getPessoa().getDataNascimento());
-        this.foto = servidorEfetivo.getPessoa().getFotoPessoa().getUrlFoto();
 
         Optional.ofNullable(servidorEfetivo.getPessoa().getFotoPessoa()).ifPresent(f -> this.foto = f.getUrlFoto());
 
