@@ -7,4 +7,5 @@ import com.caiobraz.servidorapi.entity.ServidorTemporario;
 
 @Repository
 public interface ServidorTemporarioRepository extends JpaRepository<ServidorTemporario, Long> {
+
 }

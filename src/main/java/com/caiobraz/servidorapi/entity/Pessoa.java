@@ -1,11 +1,14 @@
 package com.caiobraz.servidorapi.entity;
 
 import java.time.LocalDate;
+import java.util.List;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
+import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 
 import lombok.AllArgsConstructor;
@@ -38,4 +41,14 @@ public class Pessoa {
 
     @Column(name = "PES_PAI")
     private String pai;
+
+    @OneToOne(mappedBy = "pessoa")
+    private PessoaEndereco pessoaEndereco;
+
+    @OneToOne(mappedBy = "pessoa")
+    private FotoPessoa fotoPessoa;
+
+    public Pessoa(Long id) {
+        this.id = id;
+    }
 }

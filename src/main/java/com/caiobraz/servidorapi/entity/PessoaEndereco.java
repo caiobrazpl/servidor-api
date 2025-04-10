@@ -5,12 +5,14 @@ import jakarta.persistence.Id;
 import jakarta.persistence.IdClass;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 
-import com.caiobraz.servidorapi.entity.id.PessoaEnderecoId;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
+import com.caiobraz.servidorapi.entity.id.PessoaEnderecoId;
 
 @Entity
 @Table(name = "PESSOA_ENDERECO")
@@ -21,7 +23,7 @@ import lombok.NoArgsConstructor;
 public class PessoaEndereco {
 
     @Id
-    @ManyToOne
+    @OneToOne
     @JoinColumn(name = "PES_ID")
     private Pessoa pessoa;
 

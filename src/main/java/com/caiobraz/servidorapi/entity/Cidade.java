@@ -28,4 +28,8 @@ public class Cidade {
 
     @Column(name = "CID_UF", length = 2)
     private String uf;
+
+    public Cidade(Long id) {
+        this.id = id;
+    }
 }

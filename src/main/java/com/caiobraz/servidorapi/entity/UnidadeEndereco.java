@@ -5,6 +5,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.IdClass;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 
 import com.caiobraz.servidorapi.entity.id.UnidadeEnderecoId;
@@ -21,7 +22,7 @@ import lombok.NoArgsConstructor;
 public class UnidadeEndereco {
 
     @Id
-    @ManyToOne
+    @OneToOne
     @JoinColumn(name = "UNID_ID")
     private Unidade unidade;
 

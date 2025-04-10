@@ -5,6 +5,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 
 import lombok.AllArgsConstructor;
@@ -28,4 +29,11 @@ public class Unidade {
 
     @Column(name = "UNID_SIGLA")
     private String sigla;
+
+    @OneToOne(mappedBy = "unidade")
+    private UnidadeEndereco unidadeEndereco;
+
+    public Unidade(Long id) {
+        this.id = id;
+    }
 }

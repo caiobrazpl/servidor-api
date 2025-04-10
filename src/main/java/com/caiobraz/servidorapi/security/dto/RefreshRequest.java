@@ -1,4 +1,6 @@
 package com.caiobraz.servidorapi.security.dto;
 
-public record RefreshRequest(String refreshToken) {
+import jakarta.validation.constraints.NotEmpty;
+
+public record RefreshRequest(@NotEmpty String refreshToken) {
 }
